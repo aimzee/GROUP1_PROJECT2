@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENTING</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Start Login Page Styling -->
+    <style>
+        @font-face {
+            font-family: 'Montserrat', sans-serif;
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        }   
+
+        @font-face {
+            font-family: 'Montserrat-Thin', sans-serif;
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #2D8CCA;
+            margin: 0;
+        }
+
+        main {
+            max-width: 1080px;
+            margin: auto;
+        }
+
+        .logo {
+            margin-top: 5%;
+            margin-bottom: 2%;
+        }
+
+        .logo img {
+            width: 15%;
+            display: block;
+            margin: auto;
+        }
+
+        main h4 {
+            color: #FFFFFF;
+            letter-spacing: 0.5em;
+            text-align: center;
+            margin-bottom: 2%;
+            margin-top: 10%;
+            font-weight: bold;
+        }
+
+        .login {
+            text-align: center;
+            padding: 50px 10px;
+        }
+
+        .login form {
+            width: 50%;
+            margin: auto;
+        }
+
+        .login form label,
+        .login form input,
+        .login form button {
+            margin: auto;
+            width: 80%;
+            padding: 8px;
+            display: block;
+        }
+
+        .login form label {
+            color: #FFFFFF;
+            text-align: left;
+        }
+
+        .login form input {
+            background-color: #3693D0;
+            color: #FFFFFF;
+            font-family: 'Montserrat-Thin', sans-serif;
+            border: 1px solid #FFFFFF;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .login form input::placeholder {
+            font-style: italic;
+            color: #FFFFFF;
+        }
+
+        .login form .btn {
+            font-size: 15px;
+            background-color: #FFB740;
+            font-weight: bold;
+            color: #091015;
+            border: none;
+            margin: auto;
+        }
+
+        .login a {
+            font-family: 'Montserrat-Thin', sans-serif;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+    </style>
+    <!-- End Login Page Styling -->
+
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<body>
+    <main>
+        <h4>ACCOUNT LOGIN</h4>
+        <div class="login">
+            <form action="/" method="POST">
+                <label for="username"><b>USERNAME</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required>
+                <br>
+                <label for="password"><b>PASSWORD</b></label>
+                <input type="password" placeholder="Enter password" name="password" id="password" required>
+                <br><br>
+                <input class="btn" type="submit" value="SIGN IN">
+            </form>
+            <br>
+            <a href="#" target="_blank"><i><u>forgot username / password</u></i></a>
+        </div>
+    </main>
+</body>
+</html>

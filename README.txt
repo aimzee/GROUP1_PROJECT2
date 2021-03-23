@@ -1,4 +1,4 @@
-# GROUP1_PROJECT2
+# Make sure your folder name "project2"
 
 # --------------- HOW TO RUN ----------------------
 # You can either download all the files

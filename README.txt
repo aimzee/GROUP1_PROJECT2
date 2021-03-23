@@ -1,4 +1,4 @@
-# Make sure your folder name "project2"
+# Make sure your folder name "project2" (or the package.json wouldn't work if you dowmloaded this entire folder)
 
 # --------------- HOW TO RUN ----------------------
 # You can either download all the files

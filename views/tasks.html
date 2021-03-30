@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +41,7 @@
             top: 0;
             left: 0;
             bottom: 0;
-            background-color: #091015;
+            background-color: #F2F2F2;
             overflow-x: hidden;
         }
 
@@ -52,7 +53,7 @@
             }
 
             aside .navigation-bar ul li a {
-                color: #FFFFFF;
+                color: #3693D0;
                 text-decoration: none;
                 padding: 5px;
             }
@@ -62,7 +63,7 @@
             }
 
             aside .navigation-bar ul li a:hover {
-                color: #FFB740;
+                color: #091015;
             }
         /* End Aside */
 
@@ -109,13 +110,25 @@
             /* End Heading Display */
 
         /* Start Main */
-
+            .btn-group{
+                display: flex;
+            }
+            .btn{
+                flex-grow: 1;
+            }
     </style>
     <!-- End Login Page Styling -->
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
 <body>
     <!-- Start Aside Navigation -->
     <aside>
@@ -130,7 +143,7 @@
         </div>
     </aside>
     <!-- End Aside Navigation -->
-    <main> 
+    <main>
         <div class="container col-sm-12">
             <div class="row">
                 <div class="col-sm-12">
@@ -139,28 +152,42 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="list"></div>
+            <!--             <div class="row">
                 <div class="col-sm-12">
-                    <div class="box">
-                        <h3><b>idk</b></h3> 
+                    <div class="box btn-group">
+                        <h3>{{sdaasd}}</h3>
+                        <div class="txt"></div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="box">
-                        <h3><b>idk</b></h3> 
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="box">
-                        <h3><b>idk</b></h3> 
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </main>
+    <script>
+        fetch('/searchtask').then(response => response.json())
+            .then(data => {
+                var html = '';
+                data.forEach(ele => {
+                    html += `
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="box btn-group">
+                                <h3>${ele.Task_ID}</h3>
+                                <div class="txt btn">
+                                <p>${ele.Task_Name}</p>    
+                                <p>${ele.Task_Category}</p>    
+                                <p>${ele.Task_Description}</p>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                });
+                document.querySelector('.list').innerHTML = html;
+
+            })// if it get resolved, use " then" 
+            .catch(err => console.log("Oh, error", err))//it get rejected, use catch method
+    </script>
 </body>
+
 </html>

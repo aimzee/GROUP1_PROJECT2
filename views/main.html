@@ -31,6 +31,7 @@
 
         p {
             margin-bottom: 0;
+            font-family: 'Montserrat-Thin', sans-serif;
         }
 
         /* Start Aside */
@@ -40,7 +41,7 @@
             top: 0;
             left: 0;
             bottom: 0;
-            background-color: #091015;
+            background-color: #F2F2F2;
             overflow-x: hidden;
         }
 
@@ -52,7 +53,7 @@
             }
 
             aside .navigation-bar ul li a {
-                color: #FFFFFF;
+                color: #3693D0;
                 text-decoration: none;
                 padding: 5px;
             }
@@ -62,7 +63,7 @@
             }
 
             aside .navigation-bar ul li a:hover {
-                color: #FFB740;
+                color: #091015;
             }
         /* End Aside */
 
@@ -86,6 +87,7 @@
             background-color: #FFFFFF;
             border-radius: 10px;
             padding: 40px;
+            min-height: 280px;
         }
 
         .box h3 {
@@ -94,20 +96,44 @@
 
             /* Start Account Info Display */
             .account-info {
-                background-color: #2D8CCA;
-                color: #FFFFFF;
+                background-color: #F2F2F2;
+                color: #091015;
+                box-shadow: none;
                 border: 0;
-                box-shadow: 2px 2px 2px silver;
                 font-weight: bold;
-                min-height: 200px;
             }
 
             .account-info h3 {
-                color: #FFFFFF !important;
-                font-size: 40px;
+                color: #2D8CCA;
+                font-size: 60px;
+                letter-spacing: 20px;
+            }
+            /* End Account Info Display */
+
+            .mentor {
+                background-color: #3693D0;
+                color: #FFF;
             }
 
-            /* End Account Info Display */
+            .mentee {
+                background-color: #FFB740;
+                color:#091015;
+            }
+
+            .tasks-accomplishment,
+            .feedbacks-rate {
+                background-color: #091015;
+                color: #FFF;
+                text-align: center;
+            }
+
+            .tasks-accomplishment h4 {
+                color: #FF795C;
+            }
+
+            .feedbacks-rate h4 {
+                color: #DB7CFF;
+            }
 
         /* Start Main */
 
@@ -137,24 +163,48 @@
                 <div class="col-sm-12">
                     <div class="account-info box">
                         <h3><b>WELCOME!</b></h3>
-                        <h5>{{account.Employee_Fname}} {{account.Employee_Lname}}</h5>
-                        <p><i>email</i></p>
-                        <p><i>phone</i></p>
+                        <h4>{{mainAccount.Employee_Fname}} {{mainAccount.Employee_Lname}} - {{status}}</h4>
+                        <p><i>{{mainAccount.Employee_Email}}</i></p>
+                        <p><i>{{mainAccount.Employee_Phone}}</i></p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="box">
-                        <h4><b>Mentor / MENTEE Information</b></h4>
-                        <p>FIRSTNAME LAST</p>
+                    {% if mainAccount.Employee_Status == 0 %}
+                        <div class="box mentor">
+                            <h4><b>MENTOR INFORMATION</b></h4>
+                            <br>
+                            <h5><u>{{accountTwo.Employee_Fname}} {{accountTwo.Employee_Lname}}</u></h5>
+                            <p>{{accountTwo.Employee_Email}}</p>
+                            <p>{{accountTwo.Employee_Phone}}</p>
+                        </div>
+                    {% else %}
+                        <div class="box mentee">
+                            <h4><b>MENTEE INFORMATION</b></h4>
+                            <br>
+                            <h5><u>{{accountTwo.Employee_Fname}} {{accountTwo.Employee_Lname}}</u></h5>
+                            <p>{{accountTwo.Employee_Email}}</p>
+                            <p>{{accountTwo.Employee_Phone}}</p>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if mainAccount.Employee_Status == 0 %}
+                <div class="col-sm-4">
+                    <div class="box tasks-accomplishment">
+                        <h4><b>TASK ACCOMPLISHMENT</b></h4>
+                        <br>
+                        <h2>80%</h2>
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <div class="box">
-                        <h3><b>Tasks</b></h3>
+                <div class="col-sm-4">
+                    <div class="box feedbacks-rate">
+                        <h4><b>FEEDBACKS RATE</b></h4>
+                        <br>
+                        <h2>92.2%</h2>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
     </main>

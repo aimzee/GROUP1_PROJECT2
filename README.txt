@@ -1,29 +1,18 @@
 # Make sure your folder name "project2" (or the package.json wouldn't work if you dowmloaded this entire folder)
 
 # --------------- HOW TO RUN ----------------------
-# You can either download all the files
+# Download all the files
+# MAKE SURE the project folder name match the name (First line) in package.json
 # 1. Then install these packages:
     npm install mysql
     npm install express --save
     npm install express-session
     npm install nunjucks
-# 2. Run "node index.js"
+    npm install nodemon
+# 2. Run "npm run start"
   # - If successful, console.log will print port listening + mysql database server is connected.
   
   
-# -------- if that is giving you error
-# 1. Create a new folder
-# 2. Create "views" folder.
-  # 3. add all the html pages in the views folder.
-# 4. add the index.js outside.
-# 5. run "npm init" to install package.json - Follow the configuration. (Compare to the github package.json if needed)
-# 6. Install these packages:
-    npm install mysql
-    npm install express --save
-    npm install express-session
-    npm install nunjucks
-# 7. Run "node index.js"
-  # - If successful, console.log will print port listening + mysql database server is connected.
 
 # You can interact with our website now. Hopefully. lmao. finger crosssed. cry. :)
 

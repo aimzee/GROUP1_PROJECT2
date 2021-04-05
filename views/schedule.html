@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <title>MENTING</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <!-- Start Login Page Styling -->
+    <!-- Start Styling -->
     <style>
         @font-face {
             font-family: 'Montserrat', sans-serif;
@@ -23,130 +24,335 @@
             box-sizing: border-box;
         }
 
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #F2F2F2;
+            background-color: #f3f8ff;
             margin: 0;
         }
 
         p {
             margin-bottom: 0;
+            font-family: 'Montserrat-Thin', sans-serif;
         }
 
         /* Start Aside */
         aside {
-            width: 80px;
-            position: fixed;
             top: 0;
             left: 0;
             bottom: 0;
-            background-color: #091015;
+            background-color: #f3f8ff;
             overflow-x: hidden;
         }
+
+            aside .navigation-bar {
+                margin-top: 7em;
+            }
 
             aside .navigation-bar ul li {
                 margin-top: 20px;
                 margin-bottom: 20px;
-                padding: 20px 5px;
+                padding: 20px;
                 text-align: center;
             }
 
             aside .navigation-bar ul li a {
-                color: #FFFFFF;
+                color: #2D8CCA;
                 text-decoration: none;
-                padding: 5px;
+                font-size: 14px;
             }
 
             aside .navigation-bar ul li a i {
-                font-size: 1.5em;
+                font-size: 1.6em;
             }
 
             aside .navigation-bar ul li a:hover {
-                color: #FFB740;
+                color: #193b68;
             }
         /* End Aside */
 
-        /* Start Main */
+        /* Start Main Container */
         main {
-            margin-left: 80px;
-            padding-right: 20px;
+            padding: 30px;
+            background-color: #f3f8ff;
+            border-radius: 20px;
+            height: 100%;
         }
 
-        main .container {
-            margin: 10px;
-            padding: 10px;
+        main .tasks-info #heading {
+            color: #2D8CCA;
+            letter-spacing: 10px;
+            font-size: 50px;
+            font-weight: bold;
         }
 
-        .row {
-            margin: auto;
-            margin-bottom: 20px;
+        main .tasks-info .tasks-overview {
+            margin-top: 20px;
         }
+
+        .tasks-overview #greetings,
+        .tasks-overview #date {
+            color: #919dae;
+            font-family: 'Montserrat-Thin', sans-serif;
+        }
+
+        .tasks-overview h3 {
+            color: #2D8CCA;
+        }
+
+        .tasks-overview p, h5 {
+            color: #193b68;
+            font-family: 'Montserrat-Thin', sans-serif;
+        }
+
 
         .box {
             background-color: #FFFFFF;
             border-radius: 10px;
-            padding: 40px;
+            padding: 30px;
+            height: 180px;
+            min-width: 220px;
+            box-shadow: 2px 2px 10px #c5d5ec;
+            margin-bottom: 15px;
+            margin-right: 10px;
+            display: inline-block;
         }
 
-        .box h3 {
+        .dashboard-boxes {
+            color: #193b68;
+        }
+
+        .dashboard-boxes #heading {
             color: #2D8CCA;
+            text-align: center;
         }
 
-            /* Start Heading Display */
-            .heading {
-                background-color: #2D8CCA;
-                color: #FFFFFF;
-                border: 0;
-                box-shadow: 2px 2px 2px silver;
-                font-weight: bold;
-            }
+        .box-link {
+            text-align: center;
+            color: #193b68;
+            padding: 20px;
+        }
 
-            .heading h3 {
-                color: #FFFFFF !important;
-                font-size: 40px;
-            }
+        .box-link:hover {
+            text-decoration: none;
+        }
 
-            /* End Heading Display */
+        .box-link:hover #heading {
+            color: #FFF;
+        }
 
+        .box-link:hover {
+            background-color: #2D8CCA;
+            color: #FFF;
+        }
+
+        .box-link i {
+            font-size: 50px;
+        }
+
+        .box h4 {
+            font-size: 24px;
+        }
+
+        .box form label {
+            display: block;
+        }
+
+
+        .box form input {
+            background-color: #3693D0;
+            color: #FFFFFF;
+            font-family: 'Montserrat-Thin', sans-serif;
+            border: 1px solid #FFFFFF;
+            width: 100%;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .box form input::placeholder {
+            font-style: italic;
+            color: #FFFFFF;
+        }
+
+        .box form input {
+            margin-bottom: 10px;
+        }
+
+        .box form .btn {
+            font-size: 15px;
+            background-color: #FFB740;
+            font-weight: bold;
+            color: #091015;
+            border: none;
+            margin: auto;
+        }
+
+        .taskAdded {
+            padding: 15px;
+            border: 2px solid #3693D0;
+            border-radius: 10px;
+        }
+
+        #taskListTitle {
+            font-weight: bold;
+            text-align: center;
+            color: #3693D0;
+        }
         /* Start Main */
 
     </style>
-    <!-- End Login Page Styling -->
+    <!-- End Styling -->
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
 <body>
-    <!-- Start Aside Navigation -->
-    <aside>
-        <div class="navigation-bar">
-            <ul class="list-unstyled">
-                <li><a href="/main"><i class="fa fa-home"></i></a></li>
-                <li><a href="/tasks"><i class="fa fa-tasks"></i></a></li>
-                <li><a href="/schedule"><i class="far fa-calendar-alt"></i></a></li>
-                <li><a href="/report"><i class="far fa-chart-bar"></i></a></li>
-                <li><a href="/logout"><i class="fa fa-sign-out-alt"></i></a></li>
-            </ul>
+    <div class="row">
+        <div class="col-sm-2" style="padding-right: 0;">
+            <aside>
+                <div class="navigation-bar">
+                    <ul class="list-unstyled">
+                        <li><a href="/main"><i class="fa fa-home"></i><br>HOME</a></li>
+                        <li><a href="/tasks"><i class="fa fa-tasks"></i><br>TASKS</a></li>
+                        <li><a href="/schedule"><i class="far fa-calendar-alt"></i><br>SCHEDULE</a></li>
+                        <li><a href="/report"><i class="far fa-chart-bar"></i><br>REPORT</a></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out-alt"></i><br>LOGOUT</a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-    </aside>
-    <!-- End Aside Navigation -->
-    <main> 
-        <div class="container col-sm-12">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="heading box">
-                        <h3><b>TRAINING SCHEDULE</b></h3>
+        <div class="col-sm-10" style="padding-left: 0;">
+            <main>
+                <div class="row">
+                    <div class="col-sm-5">
+                            <section class="tasks-info">
+                                <h1 id="heading">TRAINING SCHEDULE</h1>
+                                <div class="tasks-overview">
+                                    <br>
+                                    <p>Welcome to the Training Schedule Center.</p>
+                                    {% if employeeStatus == 0 %}
+                                    <p>View all trainings scheduled by your mentor here.</p>
+                                    <br>
+                                    <h5>You have completed <b><u>{{trainingCompletedCount}} trainings</u></b> up to date.</h5>
+                                    {% else %}
+                                    <p>Request new trainings and view assigned trainings here.</p>
+                                    <br>
+                                    {% endif %}
+                                    <br>
+                                    {% if success == 1 %}
+                                    <p><b>{{successMsg}}</b></p>
+                                    <br>
+                                    <div class="col-sm-12 taskAdded">
+                                        <p><b>Here is the most recent training requested:</b></p>
+                                        <br>
+                                        <p><b>{{addedTrainTask.Task_Name}}</b></p>
+                                        <p><b>Training Assign Date:</b> {{addedtrainingAssign}}</p>
+                                        <p><b>Training Start Date:</b> {{addedTrainingStart}}</p>
+                                        <p><b>Training End Date</b> {{addedTrainingEnd}}</p>
+                                    </div>
+                                    {% endif %}
+
+                                    {% if employeeStatus == 0 %}
+                                    <h5><b>Upcoming trainings:</b></h5>
+                                    {% for training in upcomingTrainings %}
+                                    <div class="col-sm-12 taskAdded">
+                                        <p><b>Training No. {{training.Training_ID}} - {{training.Task_Name}}</b></p>
+                                        <br>
+                                        <p><b>Training Assign Date:</b><br>{{training.Training_Assign_Date}}</p>
+                                        <p><b>Training Start Date:</b><br>{{training.Training_Start}}</p>
+                                        <p><b>Training End Date:</b><br>{{training.Training_End}}</p>
+                                    </div>
+                                    <br>
+                                    {% endfor %}
+                                    {% else %}
+                                    <br>
+                                    <h5><b>Upcoming trainings with Mentee:</b></h5>
+                                    {% for training in upcomingTrainings %}
+                                    <div class="col-sm-12 taskAdded">
+                                        <p><b>Training No. {{training.Training_ID}} - {{training.Task_Name}}</b></p>
+                                        <br>
+                                        <p><b>Training Assign Date:</b><br>{{training.Training_Assign_Date}}</p>
+                                        <p><b>Training Start Date:</b><br>{{training.Training_Start}}</p>
+                                        <p><b>Training End Date:</b><br>{{training.Training_End}}</p>
+                                    </div>
+                                    <br>
+                                    {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-sm-7">
+                            <section class="dashboard-boxes">
+                                {% if employeeStatus == 1 %}
+                                <div class="box col-sm-12" style="background-color:#2D8CCA; color:#FFF; box-shadow: none; height: 580px;">
+                                    <h3><b>Add a new training for mentee:</b></h3>
+                                    <p>This will schedule future training.<br>To view list of tasks and get its ID, see Task Center.</p>
+                                    <br>
+                                    <form action="/trainings" method="POST">
+                                        <label for="trainStart"><b>Training Start Date:</b></label>
+                                        <input type="text" placeholder="e.g YYYY-MM-DD" name="trainStart" id="trainStart" required>
+                                        <br>
+                                        <label for="trainEnd"><b>Training End Date:</b></label>
+                                        <input type="text" placeholder="e.g YYYY-MM-DD" name="trainEnd" id="trainEnd" required>
+                                        <br>
+                                        <label for="trainAssignDate"><b>Training Assign Date:</b></label>
+                                        <input type="text" placeholder="e.g YYYY-MM-DD" name="trainAssignDate" id="trainAssignDate" required>
+                                        <br>
+                                        <label for="taskID"><b>Task ID:</b></label>
+                                        <input type="number" placeholder="e.g 1" name="taskID" id="taskID" required>
+                                        <br><br>
+                                        <input class="btn" type="submit" value="ADD NEW TASK">
+                                    </form>
+                                </div>
+                                {% endif %}
+                                {% if employeeStatus == 0%}
+                                <h2 id="taskListTitle">Completed Training List</h2>
+                                <div class="col-sm-12 list"></div>
+                                {% else %}
+                                <h2 id="taskListTitle">Mentee's Completed Training List</h2>
+                                <div class="col-sm-12 list"></div>
+                                {% endif %}
+                            </section>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="box">
-                        <h3><b>idk</b></h3> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+            </main>
+        </div>  
+    </div>
+    <script>
+        fetch('/scheduletask').then(response => response.json())
+            .then(data => {
+                var html = '';
+                data.forEach(ele => {
+                    html += `
+                        <div class="box col-sm-12">
+                            <h3>Training No.${ele.Training_ID}</h3>  
+                            <p><b>Training Start:</b> ${ele.Training_Start.split('.000Z')[0].split('T')[0]}</p>    
+                            <p><b>Training End:</b> ${ele.Training_End.split('.000Z')[0].split('T')[0]}</p>    
+                            <p><b>Training Assign Date:</b> ${ele.Training_Assign_Date.split('.000Z')[0].split('T')[0]}</p>    
+                        </div>
+                    `
+                });
+                document.querySelector('.list').innerHTML = html;
+
+            })// if it get resolved, use " then" 
+            .catch(err => console.log("Oh, error", err))//it get rejected, use catch method
+    </script>
 </body>
+
 </html>
